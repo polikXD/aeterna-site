@@ -21,76 +21,81 @@
 <body class="bg-imperial-bg text-gray-200 font-sans min-h-screen flex flex-col">
 
     <header class="fixed top-0 w-full bg-imperial-bg/95 border-b border-imperial-stone/30 z-50">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 font-heading text-xl text-imperial-gold font-bold tracking-widest">
+        <div class="max-w-7xl mx-auto px-4 h-auto md:h-16 py-4 md:py-0 flex flex-col md:flex-row items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3 font-heading text-xl text-imperial-gold font-bold tracking-widest shrink-0">
                 <img src="AeternaLogo.png" alt="Logo" class="h-10 w-auto">
                 AETERNA
             </a>
-            <nav class="flex gap-6 text-sm font-semibold tracking-wider items-center">
-                <a href="index.html" class="text-imperial-red">ГЛАВНАЯ</a>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm font-semibold tracking-wider items-center">
+                <a href="index.html" class="text-imperial-red border-b border-imperial-red pb-1">ГЛАВНАЯ</a>
                 <a href="rules.html" class="hover:text-imperial-red transition-colors">ПРАВИЛА</a>
                 <a href="lore.html" class="hover:text-imperial-red transition-colors">ЛОР</a>
                 <a href="map.html" class="hover:text-imperial-red transition-colors">КАРТА</a>
-                <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="bg-imperial-gold/10 text-imperial-gold border border-imperial-gold/30 px-3 py-1 rounded hover:bg-imperial-gold hover:text-black transition-all">DISCORD</a>
+                <a href="technical.html" class="hover:text-imperial-red transition-colors">МОДЫ</a>
+                <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="bg-imperial-gold/10 text-imperial-gold border border-imperial-gold/30 px-3 py-1 rounded hover:bg-imperial-gold hover:text-black transition-all ml-0 md:ml-2">DISCORD</a>
             </nav>
         </div>
     </header>
 
-    <main class="flex-grow pt-16 pb-20">
-        <section class="relative h-[60vh] flex flex-col items-center justify-center text-center px-4 border-b-4 border-imperial-red/50" style="background-image: url('PalaceHero.jpg'); background-size: cover; background-position: center;">
+    <main class="flex-grow pt-32 md:pt-16 pb-20">
+        <section class="relative h-[65vh] flex flex-col items-center justify-center text-center px-4 border-b-4 border-imperial-red/50" style="background-image: url('PalaceHero.jpg'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-black/70 z-0"></div>
             <div class="relative z-10 max-w-3xl">
-                <h1 class="font-heading text-4xl md:text-6xl text-imperial-gold font-bold mb-6 drop-shadow-lg uppercase">Добро пожаловать в Аэтерна</h1>
+                <h1 class="font-heading text-4xl md:text-6xl text-imperial-gold font-bold mb-6 drop-shadow-lg uppercase tracking-tight">Добро пожаловать в Аэтерна</h1>
                 <p class="text-lg md:text-xl text-gray-200 mb-4 drop-shadow-md italic">Организация, Инженерия, Драма.</p>
+                <a href="#apply" class="mt-8 inline-block bg-imperial-red text-white font-heading font-bold py-3 px-10 rounded-sm hover:bg-imperial-gold hover:text-black transition-all uppercase tracking-widest shadow-xl">Вступить в Империю</a>
             </div>
         </section>
 
         <section class="py-12 px-4 flex justify-center">
-            <div class="bg-[#2A2A2A] border border-imperial-stone/40 px-6 py-4 rounded-sm flex items-center gap-4 shadow-lg">
-                <span class="text-imperial-stone font-bold uppercase text-xs tracking-widest">Server IP:</span>
-                <span class="font-mono text-lg md:text-xl text-white">185.207.164.14:19010</span>
-                <button onclick="copyIP()" id="copyBtn" class="bg-imperial-red/20 hover:bg-imperial-red p-2 px-4 rounded transition-colors text-white text-sm font-bold uppercase">COPY</button>
+            <div class="bg-[#2A2A2A] border border-imperial-stone/40 px-6 py-4 rounded-sm flex flex-col md:flex-row items-center gap-4 shadow-lg">
+                <div class="flex items-center gap-4">
+                    <span class="text-imperial-stone font-bold uppercase text-xs tracking-widest">Server IP:</span>
+                    <span class="font-mono text-lg md:text-xl text-white">185.207.164.14:19010</span>
+                </div>
+                <button onclick="copyIP()" id="copyBtn" class="bg-imperial-red/20 hover:bg-imperial-red p-2 px-6 rounded transition-colors text-white text-sm font-bold uppercase tracking-widest border border-imperial-red/30">COPY IP</button>
             </div>
         </section>
 
-        <section class="px-4">
-            <div class="max-w-xl mx-auto bg-[#252525] p-8 border border-imperial-stone/40 rounded-sm shadow-xl">
-                <h2 class="font-heading text-2xl text-imperial-gold mb-6 text-center border-b border-imperial-stone/30 pb-4">ПОДАТЬ ЗАЯВКУ</h2>
+        <section id="apply" class="px-4 py-8">
+            <div class="max-w-xl mx-auto bg-[#252525] p-8 border border-imperial-stone/40 rounded-sm shadow-2xl relative">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-imperial-red px-6 py-1 text-xs font-bold uppercase tracking-widest text-white">Канцелярия</div>
+                <h2 class="font-heading text-2xl text-imperial-gold mb-6 text-center border-b border-imperial-stone/30 pb-4">ПРОШЕНИЕ О ГРАЖДАНСТВЕ</h2>
                 <form id="applicationForm" class="flex flex-col gap-5">
                     <div>
-                        <label class="block text-imperial-stone text-xs mb-1 uppercase tracking-widest font-bold">Никнейм</label>
-                        <input type="text" id="nickname" required class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red">
+                        <label class="block text-imperial-stone text-[10px] mb-1 uppercase tracking-widest font-bold">Имя в реестре (Никнейм)</label>
+                        <input type="text" id="nickname" required class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red transition-all">
                     </div>
                     <div>
-                        <label class="block text-imperial-stone text-xs mb-1 uppercase tracking-widest font-bold">Возраст</label>
-                        <input type="number" id="age" required class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red">
+                        <label class="block text-imperial-stone text-[10px] mb-1 uppercase tracking-widest font-bold">Возраст (Лет)</label>
+                        <input type="number" id="age" required class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red transition-all">
                     </div>
                     <div>
-                        <label class="block text-imperial-stone text-xs mb-1 uppercase tracking-widest font-bold">Специализация</label>
-                        <textarea id="strongSide" placeholder="Строитель, Техник, Воин..." class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red min-h-[80px]"></textarea>
+                        <label class="block text-imperial-stone text-[10px] mb-1 uppercase tracking-widest font-bold">Специализация (Таланты)</label>
+                        <textarea id="strongSide" placeholder="Строитель, Инженер, Торговец..." class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red min-h-[100px]"></textarea>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <input type="checkbox" required id="rules-agree" class="w-5 h-5 accent-imperial-red cursor-pointer">
-                        <label for="rules-agree" class="text-sm text-gray-400 cursor-pointer text-shadow">Я принимаю законы Империи.</label>
+                    <div class="flex items-start gap-3 mt-2">
+                        <input type="checkbox" required id="rules-agree" class="mt-1 w-5 h-5 accent-imperial-red cursor-pointer">
+                        <label for="rules-agree" class="text-xs text-gray-400 cursor-pointer leading-tight uppercase tracking-tighter">Я подтверждаю знание <a href="rules.html" class="text-imperial-gold hover:underline">Уголовного Кодекса</a> и обязуюсь чтить законы Императора.</label>
                     </div>
-                    <button type="submit" id="submitBtn" class="mt-4 w-full bg-imperial-red text-white font-heading font-bold py-4 hover:bg-imperial-gold hover:text-black transition-all shadow-xl uppercase tracking-widest">Отправить прошение</button>
+                    <button type="submit" id="submitBtn" class="mt-4 w-full bg-imperial-red text-white font-heading font-bold py-4 hover:bg-imperial-gold hover:text-black transition-all shadow-xl uppercase tracking-widest">Отправить в Капитолий</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <div id="successModal" class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 backdrop-blur-md">
-        <div class="bg-[#1E1E1E] border-2 border-imperial-gold max-w-md w-full p-8 flex flex-col items-center">
+    <div id="successModal" class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 backdrop-blur-xl">
+        <div class="bg-[#1E1E1E] border-2 border-imperial-gold max-w-md w-full p-8 flex flex-col items-center shadow-[0_0_60px_rgba(255,215,0,0.1)]">
             <img src="ScrollSealed.png" alt="Scroll" class="mb-4 w-32 h-auto drop-shadow-2xl">
-            <h3 class="font-heading text-3xl text-imperial-gold mb-2 uppercase text-center">ЗАЯВКА ПРИНЯТА</h3>
-            <p class="text-gray-400 text-center mb-6 text-sm">
-                Ваше Величество Polik получил Ваше прошение. Проверка займет до 24 часов.<br><br>
-                Пока ожидаете решения Сената, вступайте в наш Discord.
+            <h2 class="font-heading text-3xl text-imperial-gold mb-2 uppercase tracking-tighter">Заявка принята</h2>
+            <div class="h-0.5 w-16 bg-imperial-red mb-6"></div>
+            <p class="text-gray-300 text-center mb-8 text-sm leading-relaxed">
+                Ваше Величество Polik получил Ваше прошение. Проверка займет до 24 часов. <br><br>
+                Пока Сенат принимает решение, вступите в наши ряды в Discord.
             </p>
-            
             <div class="flex flex-col w-full gap-3">
                 <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="w-full bg-[#5865F2] text-white font-bold py-3 text-center rounded-sm hover:opacity-90 transition-all uppercase text-xs tracking-widest">Войти в Discord</a>
-                <button onclick="closeModal()" class="w-full bg-imperial-stone/20 text-white font-bold py-3 hover:bg-imperial-stone/40 transition-colors uppercase text-xs tracking-widest">Закрыть</button>
+                <button onclick="closeModal()" class="w-full bg-transparent border border-imperial-stone/30 text-imperial-stone font-bold py-3 hover:bg-white/5 transition-colors uppercase text-xs tracking-widest">Закрыть</button>
             </div>
         </div>
     </div>
@@ -100,7 +105,7 @@
             navigator.clipboard.writeText("185.207.164.14:19010");
             const btn = document.getElementById("copyBtn");
             btn.innerText = "COPIED!";
-            setTimeout(() => btn.innerText = "COPY", 2000);
+            setTimeout(() => btn.innerText = "COPY IP", 2000);
         }
         function closeModal() { document.getElementById('successModal').classList.add('hidden'); }
 
@@ -116,7 +121,7 @@
             const stopWords = ['admin', 'moder', 'админ', 'модер'];
             if (stopWords.some(word => nick.toLowerCase().includes(word))) { alert("Forbidden nickname."); return; }
 
-            btn.innerText = 'PROCESSING...';
+            btn.innerText = 'SYSTEM PROCESSING...';
             btn.disabled = true;
 
             const payload = { "embeds": [{
@@ -130,7 +135,7 @@
                 const response = await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
                 if (response.ok) { document.getElementById('successModal').classList.remove('hidden'); this.reset(); }
             } catch (err) { alert("System error."); }
-            finally { btn.innerText = 'Отправить прошение'; btn.disabled = false; }
+            finally { btn.innerText = 'Отправить в Капитолий'; btn.disabled = false; }
         });
     </script>
 </body>
