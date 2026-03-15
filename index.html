@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Империя Аэтерна</title>
-    <link rel="icon" type="image/png" href="AeternaLogo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Империя Аэтерна | Главная</title>
     
+    <link rel="icon" type="image/png" href="AeternaLogo.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -23,21 +24,13 @@
         }
       }
     </script>
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // Твой публичный ключ
-            emailjs.init("TSRYqAy2W7KdJbrdD");
-        })();
-    </script>
 </head>
 <body class="bg-imperial-bg text-gray-200 font-sans min-h-screen flex flex-col">
 
     <header class="fixed top-0 w-full bg-imperial-bg/95 border-b border-imperial-stone/30 z-50">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 font-heading text-xl text-imperial-gold font-bold tracking-widest">
-                <img src="AeternaLogo.png" alt="Логотип" class="h-10 w-auto">
+                <img src="AeternaLogo.png" alt="Logo" class="h-10 w-auto">
                 AETERNA
             </a>
             <nav class="flex gap-6 text-sm font-semibold tracking-wider">
@@ -50,7 +43,7 @@
     </header>
 
     <main class="flex-grow pt-16 pb-20">
-        <section class="relative h-[60vh] flex flex-col items-center justify-center text-center px-4 border-b-4 border-imperial-red/50" style="background-image: url('PalaceHero.jpg'); background-size: cover; background-position: center;">
+        <section class="relative h-[60vh] flex flex-col items-center justify-center text-center px-4 border-b-4 border-imperial-red/50" style="background-image: url('PalaceHero.png'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-black/70 z-0"></div>
             <div class="relative z-10 max-w-3xl">
                 <h1 class="font-heading text-4xl md:text-6xl text-imperial-gold font-bold mb-6 drop-shadow-lg">
@@ -60,7 +53,7 @@
                     Aeterna Imperium is an organized, lore-driven, claims-based survival server.
                 </p>
                 <p class="text-md md:text-lg text-imperial-stone font-semibold italic drop-shadow-md">
-                    Our code: Организация, Инженерия, Драма.
+                    Организация, Инженерия, Драма.
                 </p>
             </div>
         </section>
@@ -68,7 +61,7 @@
         <section class="py-12 px-4 flex justify-center">
             <div class="bg-[#2A2A2A] border border-imperial-stone/40 px-6 py-4 rounded-sm flex items-center gap-4 shadow-lg">
                 <span class="text-imperial-stone font-bold">IP:</span>
-                <span class="font-mono text-xl text-white" id="ipText">185.207.164.14:19010</span>
+                <span class="font-mono text-xl text-white">play.aeterna.ru</span>
                 <button onclick="copyIP()" id="copyBtn" class="bg-imperial-red/20 hover:bg-imperial-red p-2 rounded transition-colors text-white text-sm font-bold">
                     COPY
                 </button>
@@ -83,24 +76,24 @@
                 
                 <form id="applicationForm" class="flex flex-col gap-5">
                     <div>
-                        <label class="block text-imperial-stone text-sm mb-1">Игровой никнейм</label>
-                        <input type="text" name="nickname" required class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red" />
+                        <label class="block text-imperial-stone text-sm mb-1 uppercase tracking-tighter">Игровой никнейм</label>
+                        <input type="text" name="nickname" id="nickname" required class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red" />
                     </div>
                     <div>
-                        <label class="block text-imperial-stone text-sm mb-1">Возраст</label>
-                        <input type="number" name="age" required min="1" class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red" />
+                        <label class="block text-imperial-stone text-sm mb-1 uppercase tracking-tighter">Возраст</label>
+                        <input type="number" name="age" id="age" required class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red" />
                     </div>
                     <div>
-                        <label class="block text-imperial-stone text-sm mb-1">Сильная сторона <span class="text-gray-500 text-xs">(Необязательно)</span></label>
-                        <textarea name="strongSide" placeholder="Строительство, ПвП, Лорд, Техник..." class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red min-h-[100px]"></textarea>
+                        <label class="block text-imperial-stone text-sm mb-1 uppercase tracking-tighter">Сильная сторона <span class="text-gray-500 text-xs">(Необязательно)</span></label>
+                        <textarea name="strongSide" id="strongSide" placeholder="Строительство, ПвП, Лорд, Техник..." class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red min-h-[100px]"></textarea>
                     </div>
                     <div class="flex items-center gap-3 mt-2">
-                        <input type="checkbox" required id="rules-agree" class="w-5 h-5 accent-imperial-red" />
-                        <label for="rules-agree" class="text-sm text-gray-300">
+                        <input type="checkbox" required id="rules-agree" class="w-5 h-5 accent-imperial-red cursor-pointer" />
+                        <label for="rules-agree" class="text-sm text-gray-300 cursor-pointer">
                             Я согласен с <a href="rules.html" class="text-imperial-gold hover:underline">правилами Империи</a> и уголовным кодексом.
                         </label>
                     </div>
-                    <button type="submit" id="submitBtn" class="mt-4 w-full bg-imperial-red text-white font-heading font-bold py-4 hover:bg-imperial-gold hover:text-black transition-all">
+                    <button type="submit" id="submitBtn" class="mt-4 w-full bg-imperial-red text-white font-heading font-bold py-4 hover:bg-imperial-gold hover:text-black transition-all shadow-lg">
                         ОТПРАВИТЬ ЗАЯВКУ В КАНЦЕЛЯРИЮ
                     </button>
                 </form>
@@ -108,56 +101,92 @@
         </section>
     </main>
 
-    <div id="successModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-        <div class="bg-[#1E1E1E] border-2 border-imperial-gold max-w-md w-full p-8 relative flex flex-col items-center">
-            <img src="ScrollSealed.png" alt="Печать" class="mb-4 w-32 h-auto drop-shadow-xl">
+    <div id="successModal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-[#1E1E1E] border-2 border-imperial-gold max-w-md w-full p-8 relative flex flex-col items-center shadow-[0_0_50px_rgba(255,215,0,0.2)]">
+            <img src="ScrollSealed.png" alt="Scroll" class="mb-4 w-32 h-auto drop-shadow-2xl">
             <h3 class="font-heading text-3xl text-imperial-gold mb-4 text-center">ЗАЯВКА ПРИНЯТА</h3>
-            <p class="text-gray-300 text-center mb-6">
+            <p class="text-gray-300 text-center mb-6 leading-relaxed">
                 Ваше Величество Polik получил Ваше прошение. Проверка обычно занимает до 24 часов.<br><br>
-                Пока ожидаете, добавьте IP: <strong class="text-imperial-red">185.207.164.14:19010</strong>.<br><br>
+                Пока ожидаете, добавьте IP: <strong class="text-imperial-red">play.aeterna.ru</strong>.<br><br>
                 Счастливой дороги, варвар!
             </p>
-            <button onclick="closeModal()" class="w-full bg-imperial-stone text-white font-bold py-3 hover:bg-imperial-gold hover:text-black transition-colors">
+            <button onclick="closeModal()" class="w-full bg-imperial-stone text-white font-bold py-3 hover:bg-imperial-gold hover:text-black transition-colors rounded-sm uppercase tracking-widest">
                 ОК
             </button>
         </div>
     </div>
 
     <script>
-        // Копирование IP
+        // 1. Копирование IP
         function copyIP() {
-            navigator.clipboard.writeText("185.207.164.14:19010");
+            navigator.clipboard.writeText("play.aeterna.ru");
             const btn = document.getElementById("copyBtn");
             btn.innerText = "СКОПИРОВАНО!";
             setTimeout(() => btn.innerText = "COPY", 2000);
         }
 
-        // Отправка формы через EmailJS
-        document.getElementById('applicationForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const btn = document.getElementById('submitBtn');
-            btn.innerText = 'ОТПРАВКА...';
-            btn.disabled = true;
-
-            // Используем твои ID Сервиса и Шаблона
-            emailjs.sendForm('service_kwt3tti', 'template_tpje1u6', this)
-                .then(function() {
-                    document.getElementById('successModal').classList.remove('hidden');
-                    document.getElementById('applicationForm').reset();
-                }, function(error) {
-                    alert('Ошибка при отправке: ' + JSON.stringify(error));
-                })
-                .finally(function() {
-                    btn.innerText = 'ОТПРАВИТЬ ЗАЯВКУ В КАНЦЕЛЯРИЮ';
-                    btn.disabled = false;
-                });
-        });
-
-        // Закрытие модального окна
+        // 2. Закрытие модалки
         function closeModal() {
             document.getElementById('successModal').classList.add('hidden');
         }
+
+        // 3. Валидация и Отправка в Discord Webhook
+        document.getElementById('applicationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            const nick = document.getElementById('nickname').value;
+            const age = parseInt(document.getElementById('age').value);
+            const side = document.getElementById('strongSide').value || "None specified";
+            const webhookUrl = "https://discordapp.com/api/webhooks/1482801738942644316/WNQbUyjsItHz3-84f_6AJJc2Eet6I8LABUMYiArzcYZZR_Id8X0PLWUvaEY6SinIQAi2";
+
+            // --- ВАЛИДАЦИЯ ---
+            if (age < 10 || age > 100) {
+                alert("Invalid age data");
+                return;
+            }
+
+            const stopWords = ['admin', 'moder', 'админ', 'модер', 'хуй', 'пидор', 'сука'];
+            if (stopWords.some(word => nick.toLowerCase().includes(word))) {
+                alert("Invalid nickname: Forbidden words detected.");
+                return;
+            }
+
+            // --- ОТПРАВКА ---
+            btn.innerText = 'SYSTEM PROCESSING...';
+            btn.disabled = true;
+
+            const payload = {
+                "embeds": [
+                    {
+                        "title": "[NEW APPLICATION] System Log",
+                        "color": 12733248,
+                        "description": `**ID:** ${nick}\n**Age:** ${age}\n**Spec:** ${side}\n**Rules:** Confirmed.\n---\n*Status: Awaiting Review*`,
+                        "timestamp": new Date().toISOString()
+                    }
+                ]
+            };
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    document.getElementById('successModal').classList.remove('hidden');
+                    this.reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                alert("System error. Webhook failed.");
+            } finally {
+                btn.innerText = 'ОТПРАВИТЬ ЗАЯВКУ В КАНЦЕЛЯРИЮ';
+                btn.disabled = false;
+            }
+        });
     </script>
 </body>
 </html>
