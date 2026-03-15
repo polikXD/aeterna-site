@@ -17,40 +17,41 @@
         .content-overlay { background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(3px); }
     </style>
 </head>
-<body class="bg-imperial-bg text-gray-200 font-sans min-h-screen pt-20">
+<body class="bg-imperial-bg text-gray-200 font-sans min-h-screen pt-32 md:pt-20">
     <header class="fixed top-0 w-full bg-imperial-bg/95 border-b border-imperial-stone/30 z-50">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 font-heading text-xl text-imperial-gold font-bold tracking-widest">
+        <div class="max-w-7xl mx-auto px-4 h-auto md:h-16 py-4 md:py-0 flex flex-col md:flex-row items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-3 font-heading text-xl text-imperial-gold font-bold tracking-widest shrink-0">
                 <img src="AeternaLogo.png" alt="Logo" class="h-10 w-auto">
                 AETERNA
             </a>
-            <nav class="flex gap-6 text-sm font-semibold tracking-wider items-center">
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm font-semibold tracking-wider items-center">
                 <a href="index.html" class="hover:text-imperial-red transition-colors">ГЛАВНАЯ</a>
-                <a href="rules.html" class="text-imperial-red">ПРАВИЛА</a>
+                <a href="rules.html" class="text-imperial-red border-b border-imperial-red pb-1">ПРАВИЛА</a>
                 <a href="lore.html" class="hover:text-imperial-red transition-colors">ЛОР</a>
                 <a href="map.html" class="hover:text-imperial-red transition-colors">КАРТА</a>
-                <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="bg-imperial-gold/10 text-imperial-gold border border-imperial-gold/30 px-3 py-1 rounded hover:bg-imperial-gold hover:text-black transition-all">DISCORD</a>
+                <a href="technical.html" class="hover:text-imperial-red transition-colors">МОДЫ</a>
+                <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="bg-imperial-gold/10 text-imperial-gold border border-imperial-gold/30 px-3 py-1 rounded hover:bg-imperial-gold hover:text-black transition-all ml-0 md:ml-2">DISCORD</a>
             </nav>
         </div>
     </header>
 
     <div class="max-w-7xl mx-auto px-4 py-12">
-        <h1 class="font-heading text-4xl text-imperial-gold text-center mb-16 drop-shadow-md">ВЕЛИКИЙ СВОД ЗАКОНОВ</h1>
+        <h1 class="font-heading text-4xl md:text-5xl text-imperial-gold text-center mb-16 drop-shadow-md tracking-tighter">ВЕЛИКИЙ СВОД ЗАКОНОВ</h1>
         <div class="grid lg:grid-cols-3 gap-8">
             <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden">
-                <div class="content-overlay p-8 h-full">
-                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2">Общий Регламент</h2>
-                    <ul class="space-y-3 text-xs text-gray-300">
+                <div class="content-overlay p-8 h-full border-t-2 border-imperial-gold/30">
+                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2 uppercase">Общий Регламент</h2>
+                    <ul class="space-y-3 text-sm text-gray-300">
                         <li><strong class="text-imperial-red">1.1.</strong> Абсолютная монархия. Решения Императора Polik не оспариваются.</li>
                         <li><strong class="text-imperial-red">1.2.</strong> Доксинг и деанон — вечный бан.</li>
                         <li><strong class="text-imperial-red">1.3.</strong> Читы запрещены. IP-бан без права выкупа.</li>
                     </ul>
                 </div>
             </div>
-            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden lg:mt-6">
-                <div class="content-overlay p-8 h-full">
-                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2">Уголовный Кодекс</h2>
-                    <ul class="space-y-3 text-xs text-gray-300">
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden lg:mt-8">
+                <div class="content-overlay p-8 h-full border-t-2 border-imperial-red/50">
+                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2 uppercase">Уголовный Кодекс</h2>
+                    <ul class="space-y-3 text-sm text-gray-300">
                         <li><strong class="text-imperial-red">2.1.</strong> Гриферство чужих штатов — тюрьма.</li>
                         <li><strong class="text-imperial-red">2.2.</strong> Кража из Казны Оссирии — изгнание.</li>
                         <li><strong class="text-imperial-red">2.3.</strong> Оскорбление Сената — каторга Ledger.</li>
@@ -58,9 +59,9 @@
                 </div>
             </div>
             <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden">
-                <div class="content-overlay p-8 h-full">
-                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2">Земельное Право</h2>
-                    <ul class="space-y-3 text-xs text-gray-300">
+                <div class="content-overlay p-8 h-full border-t-2 border-imperial-gold/30">
+                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2 uppercase">Земельное Право</h2>
+                    <ul class="space-y-3 text-sm text-gray-300">
                         <li><strong class="text-imperial-red">3.1.</strong> Налог 10% в пользу Казны еженедельно.</li>
                         <li><strong class="text-imperial-red">3.2.</strong> Торговля только в Восточных Доках.</li>
                         <li><strong class="text-imperial-red">3.3.</strong> Неактив 14 дней — национализация земель.</li>
