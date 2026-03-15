@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Империя Аэтерна</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              imperial: { bg: "#1E1E1E", red: "#C24B40", stone: "#8E939D", gold: "#FFD700" }
+            },
+            fontFamily: {
+              heading: ['"Cinzel"', 'serif'],
+              sans: ['"Inter"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Твой публичный ключ
+            emailjs.init("TSRYqAy2W7KdJbrdD");
+        })();
+    </script>
+</head>
+<body class="bg-imperial-bg text-gray-200 font-sans min-h-screen flex flex-col">
+
+    <header class="fixed top-0 w-full bg-imperial-bg/95 border-b border-imperial-stone/30 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-heading text-xl text-imperial-gold font-bold tracking-widest">AETERNA</a>
+            <nav class="flex gap-6 text-sm font-semibold tracking-wider">
+                <a href="index.html" class="text-imperial-red">ГЛАВНАЯ</a>
+                <a href="rules.html" class="hover:text-imperial-red transition-colors">ПРАВИЛА</a>
+                <a href="lore.html" class="hover:text-imperial-red transition-colors">ЛОР</a>
+                <a href="map.html" class="hover:text-imperial-red transition-colors">КАРТА</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-16 pb-20">
+        <section class="relative h-[60vh] flex flex-col items-center justify-center text-center px-4 border-b-4 border-imperial-red/50" style="background-image: url('palace.jpg'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black/70 z-0"></div>
+            <div class="relative z-10 max-w-3xl">
+                <h1 class="font-heading text-4xl md:text-6xl text-imperial-gold font-bold mb-6 drop-shadow-lg">
+                    ДОБРО ПОЖАЛОВАТЬ В ИМПЕРИЮ АЭТЕРНА
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-4 drop-shadow-md">
+                    Aeterna Imperium is an organized, lore-driven, claims-based survival server.
+                </p>
+                <p class="text-md md:text-lg text-imperial-stone font-semibold italic drop-shadow-md">
+                    Our code: Организация, Инженерия, Драма.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 px-4 flex justify-center">
+            <div class="bg-[#2A2A2A] border border-imperial-stone/40 px-6 py-4 rounded-sm flex items-center gap-4 shadow-lg">
+                <span class="text-imperial-stone font-bold">IP:</span>
+                <span class="font-mono text-xl text-white" id="ipText">play.aeterna.ru</span>
+                <button onclick="copyIP()" id="copyBtn" class="bg-imperial-red/20 hover:bg-imperial-red p-2 rounded transition-colors text-white text-sm font-bold">
+                    COPY
+                </button>
+            </div>
+        </section>
+
+        <section class="px-4">
+            <div class="max-w-xl mx-auto bg-[#252525] p-8 border border-imperial-stone/40 rounded-sm shadow-xl">
+                <h2 class="font-heading text-2xl text-imperial-gold mb-6 text-center border-b border-imperial-stone/30 pb-4">
+                    ПОДАТЬ ЗАЯВКУ НА ГРАЖДАНСТВО
+                </h2>
+                
+                <form id="applicationForm" class="flex flex-col gap-5">
+                    <div>
+                        <label class="block text-imperial-stone text-sm mb-1">Игровой никнейм</label>
+                        <input type="text" name="nickname" required class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red" />
+                    </div>
+                    <div>
+                        <label class="block text-imperial-stone text-sm mb-1">Возраст</label>
+                        <input type="number" name="age" required min="1" class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red" />
+                    </div>
+                    <div>
+                        <label class="block text-imperial-stone text-sm mb-1">Сильная сторона <span class="text-gray-500 text-xs">(Необязательно)</span></label>
+                        <textarea name="strongSide" placeholder="Строительство, ПвП, Лорд, Техник..." class="w-full bg-imperial-bg border border-imperial-stone/50 p-3 text-white focus:outline-none focus:border-imperial-red min-h-[100px]"></textarea>
+                    </div>
+                    <div class="flex items-center gap-3 mt-2">
+                        <input type="checkbox" required id="rules-agree" class="w-5 h-5 accent-imperial-red" />
+                        <label for="rules-agree" class="text-sm text-gray-300">
+                            Я согласен с <a href="rules.html" class="text-imperial-gold hover:underline">правилами Империи</a> и уголовным кодексом.
+                        </label>
+                    </div>
+                    <button type="submit" id="submitBtn" class="mt-4 w-full bg-imperial-red text-white font-heading font-bold py-4 hover:bg-imperial-gold hover:text-black transition-all">
+                        ОТПРАВИТЬ ЗАЯВКУ В КАНЦЕЛЯРИЮ
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="successModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+        <div class="bg-[#1E1E1E] border-2 border-imperial-gold max-w-md w-full p-8 relative">
+            <h3 class="font-heading text-3xl text-imperial-gold mb-4 text-center">ЗАЯВКА ПРИНЯТА</h3>
+            <p class="text-gray-300 text-center mb-6">
+                Ваше Величество Polik получил Ваше прошение. Проверка обычно занимает до 24 часов.<br><br>
+                Пока ожидаете, добавьте IP: <strong class="text-imperial-red">play.aeterna.ru</strong>.<br><br>
+                Счастливой дороги, варвар!
+            </p>
+            <button onclick="closeModal()" class="w-full bg-imperial-stone text-white font-bold py-3 hover:bg-imperial-gold hover:text-black transition-colors">
+                ОК
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Копирование IP
+        function copyIP() {
+            navigator.clipboard.writeText("play.aeterna.ru");
+            const btn = document.getElementById("copyBtn");
+            btn.innerText = "СКОПИРОВАНО!";
+            setTimeout(() => btn.innerText = "COPY", 2000);
+        }
+
+        // Отправка формы через EmailJS
+        document.getElementById('applicationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = 'ОТПРАВКА...';
+            btn.disabled = true;
+
+            // Используем твои ID Сервиса и Шаблона
+            emailjs.sendForm('service_kwt3tti', 'template_tpje1u6', this)
+                .then(function() {
+                    document.getElementById('successModal').classList.remove('hidden');
+                    document.getElementById('applicationForm').reset();
+                }, function(error) {
+                    alert('Ошибка при отправке: ' + JSON.stringify(error));
+                })
+                .finally(function() {
+                    btn.innerText = 'ОТПРАВИТЬ ЗАЯВКУ В КАНЦЕЛЯРИЮ';
+                    btn.disabled = false;
+                });
+        });
+
+        // Закрытие модального окна
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

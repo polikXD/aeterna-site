@@ -1,0 +1,56 @@
+!DOCTYPE html
+html lang=ru
+head
+    meta charset=UTF-8
+    titleПравила  Империя Аэтернаtitle
+    link href=httpsfonts.googleapis.comcss2family=Cinzelwght@600;700&family=Interwght@400;600&display=swap rel=stylesheet
+    script src=httpscdn.tailwindcss.comscript
+    script
+      tailwind.config = {
+        theme { extend { colors { imperial { bg #1E1E1E, red #C24B40, stone #8E939D, gold #FFD700 } }, fontFamily { heading ['Cinzel', 'serif'], sans ['Inter', 'sans-serif'] } } }
+      }
+    script
+head
+body class=bg-imperial-bg text-gray-200 font-sans min-h-screen pt-16
+    header class=fixed top-0 w-full bg-imperial-bg95 border-b border-imperial-stone30 z-50
+        div class=max-w-6xl mx-auto px-4 h-16 flex items-center justify-between
+            a href=index.html class=font-heading text-xl text-imperial-gold font-bold tracking-widestAETERNAa
+            nav class=flex gap-6 text-sm font-semibold tracking-wider
+                a href=index.html class=hovertext-imperial-red transition-colorsГЛАВНАЯa
+                a href=rules.html class=text-imperial-redПРАВИЛАa
+                a href=lore.html class=hovertext-imperial-red transition-colorsЛОРa
+                a href=map.html class=hovertext-imperial-red transition-colorsКАРТАa
+            nav
+        div
+    header
+
+    div class=max-w-6xl mx-auto px-4 py-12
+        h1 class=font-heading text-4xl text-imperial-gold text-center mb-12СВОД ЗАКОНОВ И ПРАВИЛh1
+        div class=grid mdgrid-cols-3 gap-8
+            div class=bg-[#252525] border border-imperial-stone p-6
+                h2 class=font-heading text-xl text-imperial-red mb-4 border-b border-imperial-stone30 pb-2ОБЩИЕ ПРАВИЛАh2
+                ul class=list-disc list-inside text-gray-300 space-y-2 text-sm
+                    liУважай других игроков.li
+                    liЗапрещено использование читов и X-Ray.li
+                    liГриферство вне зон войны строго карается.li
+                ul
+            div
+            div class=bg-[#252525] border border-imperial-stone p-6
+                h2 class=font-heading text-xl text-imperial-red mb-4 border-b border-imperial-stone30 pb-2УГОЛОВНЫЙ КОДЕКС ИМПЕРИИh2
+                ul class=list-disc list-inside text-gray-300 space-y-2 text-sm
+                    liКража имперского имущества — изгнание.li
+                    liНападение на чиновников — тюрьма.li
+                    liНелегальная застройка буферных зон.li
+                ul
+            div
+            div class=bg-[#252525] border border-imperial-stone p-6
+                h2 class=font-heading text-xl text-imperial-red mb-4 border-b border-imperial-stone30 pb-2ПОЛИТИЧЕСКИЕ ПРАВИЛАh2
+                ul class=list-disc list-inside text-gray-300 space-y-2 text-sm
+                    liЗахват клеймов только через Канцелярию.li
+                    liКаждый клан обязан платить дань столице.li
+                ul
+            div
+        div
+    div
+body
+html
