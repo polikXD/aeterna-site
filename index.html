@@ -26,11 +26,12 @@
                 <img src="AeternaLogo.png" alt="Logo" class="h-10 w-auto">
                 AETERNA
             </a>
-            <nav class="flex gap-6 text-sm font-semibold tracking-wider">
+            <nav class="flex gap-6 text-sm font-semibold tracking-wider items-center">
                 <a href="index.html" class="text-imperial-red">ГЛАВНАЯ</a>
                 <a href="rules.html" class="hover:text-imperial-red transition-colors">ПРАВИЛА</a>
                 <a href="lore.html" class="hover:text-imperial-red transition-colors">ЛОР</a>
                 <a href="map.html" class="hover:text-imperial-red transition-colors">КАРТА</a>
+                <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="bg-imperial-gold/10 text-imperial-gold border border-imperial-gold/30 px-3 py-1 rounded hover:bg-imperial-gold hover:text-black transition-all">DISCORD</a>
             </nav>
         </div>
     </header>
@@ -70,7 +71,7 @@
                     </div>
                     <div class="flex items-center gap-3">
                         <input type="checkbox" required id="rules-agree" class="w-5 h-5 accent-imperial-red cursor-pointer">
-                        <label for="rules-agree" class="text-sm text-gray-400 cursor-pointer">Я принимаю законы Империи.</label>
+                        <label for="rules-agree" class="text-sm text-gray-400 cursor-pointer text-shadow">Я принимаю законы Империи.</label>
                     </div>
                     <button type="submit" id="submitBtn" class="mt-4 w-full bg-imperial-red text-white font-heading font-bold py-4 hover:bg-imperial-gold hover:text-black transition-all shadow-xl uppercase tracking-widest">Отправить прошение</button>
                 </form>
@@ -78,12 +79,19 @@
         </section>
     </main>
 
-    <div id="successModal" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4 backdrop-blur-md">
+    <div id="successModal" class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 backdrop-blur-md">
         <div class="bg-[#1E1E1E] border-2 border-imperial-gold max-w-md w-full p-8 flex flex-col items-center">
             <img src="ScrollSealed.png" alt="Scroll" class="mb-4 w-32 h-auto drop-shadow-2xl">
-            <h3 class="font-heading text-3xl text-imperial-gold mb-4">ЗАЯВКА ПРИНЯТА</h3>
-            <p class="text-gray-400 text-center mb-6">Проверка займет до 24 часов. Ожидайте решения Сената.<br><br>IP: <span class="text-imperial-red">185.207.164.14:19010</span></p>
-            <button onclick="closeModal()" class="w-full bg-imperial-stone text-white font-bold py-3 hover:bg-imperial-gold hover:text-black transition-colors uppercase tracking-widest">Закрыть</button>
+            <h3 class="font-heading text-3xl text-imperial-gold mb-2 uppercase text-center">ЗАЯВКА ПРИНЯТА</h3>
+            <p class="text-gray-400 text-center mb-6 text-sm">
+                Ваше Величество Polik получил Ваше прошение. Проверка займет до 24 часов.<br><br>
+                Пока ожидаете решения Сената, вступайте в наш Discord.
+            </p>
+            
+            <div class="flex flex-col w-full gap-3">
+                <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="w-full bg-[#5865F2] text-white font-bold py-3 text-center rounded-sm hover:opacity-90 transition-all uppercase text-xs tracking-widest">Войти в Discord</a>
+                <button onclick="closeModal()" class="w-full bg-imperial-stone/20 text-white font-bold py-3 hover:bg-imperial-stone/40 transition-colors uppercase text-xs tracking-widest">Закрыть</button>
+            </div>
         </div>
     </div>
 
