@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Технический Отдел | Империя Аэтерна</title>
+    <link rel="icon" type="image/png" href="AeternaLogo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { imperial: { bg: "#1E1E1E", red: "#C24B40", stone: "#8E939D", gold: "#FFD700" } },
+            fontFamily: { heading: ['"Cinzel"', 'serif'], sans: ['"Inter"', 'sans-serif'] }
+          }
+        }
+      }
+    </script>
+    <style>
+        .stone-tablet {
+            background-image: url('RulesTablet.png');
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stone-tablet:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(194, 75, 64, 0.3);
+        }
+        .content-overlay {
+            background: rgba(20, 20, 20, 0.85);
+            backdrop-filter: blur(3px);
+        }
+    </style>
+</head>
+<body class="bg-imperial-bg text-gray-200 font-sans min-h-screen pt-20 flex flex-col">
+
+    <header class="fixed top-0 w-full bg-imperial-bg/95 border-b border-imperial-stone/30 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 font-heading text-xl text-imperial-gold font-bold tracking-widest">
+                <img src="AeternaLogo.png" alt="Logo" class="h-10 w-auto">
+                AETERNA
+            </a>
+            <nav class="flex gap-6 text-sm font-semibold tracking-wider items-center">
+                <a href="index.html" class="hover:text-imperial-red transition-colors">ГЛАВНАЯ</a>
+                <a href="rules.html" class="hover:text-imperial-red transition-colors">ПРАВИЛА</a>
+                <a href="lore.html" class="hover:text-imperial-red transition-colors">ЛОР</a>
+                <a href="map.html" class="hover:text-imperial-red transition-colors">КАРТА</a>
+                <a href="technical.html" class="text-imperial-red border-b border-imperial-red pb-1">МОДЫ</a>
+                <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="bg-imperial-gold/10 text-imperial-gold border border-imperial-gold/30 px-3 py-1 rounded hover:bg-imperial-gold hover:text-black transition-all ml-2">DISCORD</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-12 w-full">
+        <div class="text-center mb-10">
+            <h1 class="font-heading text-4xl md:text-5xl text-imperial-gold mb-4 tracking-tighter drop-shadow-md">
+                ТЕХНИЧЕСКИЙ ОТДЕЛ КАНЦЕЛЯРИИ
+            </h1>
+            <p class="text-lg text-gray-300 italic mb-8">
+                Необходимое снаряжение для входа в Империю (Fabric 1.21.1)
+            </p>
+            
+            <a href="downloads/Aeterna_Mods_Pack.zip" class="inline-flex items-center gap-3 bg-imperial-red text-white font-heading font-bold py-4 px-10 rounded-sm hover:bg-imperial-gold hover:text-black transition-all uppercase tracking-widest shadow-xl text-lg border border-imperial-red/50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                СКАЧАТЬ ВЕСЬ ПАК (ZIP)
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+            
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-lg flex flex-col">
+                <div class="content-overlay p-6 flex flex-col h-full border-t-2 border-imperial-stone/30">
+                    <h3 class="font-heading text-xl text-imperial-gold mb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-imperial-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Fabric Installer
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">Основной загрузчик для запуска клиента игры. Версия 1.1.1.</p>
+                    <a href="downloads/fabric-installer-1.1.1.exe" class="text-center w-full bg-imperial-bg border border-imperial-stone/30 text-white font-bold py-2 hover:bg-imperial-stone hover:text-black transition-colors text-xs uppercase tracking-widest">Download .exe</a>
+                </div>
+            </div>
+
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-lg flex flex-col">
+                <div class="content-overlay p-6 flex flex-col h-full border-t-2 border-imperial-red/50">
+                    <h3 class="font-heading text-xl text-imperial-gold mb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-imperial-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                        Simple Voice Chat
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow"><span class="text-imperial-red font-bold">Обязательно!</span> Голосовая связь внутри игры (2.6.12).</p>
+                    <a href="downloads/voicechat-fabric-1.21.11-2.6.12.jar" class="text-center w-full bg-imperial-bg border border-imperial-stone/30 text-white font-bold py-2 hover:bg-imperial-stone hover:text-black transition-colors text-xs uppercase tracking-widest">Download .jar</a>
+                </div>
+            </div>
+
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-lg flex flex-col">
+                <div class="content-overlay p-6 flex flex-col h-full border-t-2 border-imperial-stone/30">
+                    <h3 class="font-heading text-xl text-imperial-gold mb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-imperial-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        ImagineBook
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">Мод на расширенные книги и оформление лорных документов.</p>
+                    <a href="downloads/imaginebook-fabric-1.2.9+1.21.10.jar" class="text-center w-full bg-imperial-bg border border-imperial-stone/30 text-white font-bold py-2 hover:bg-imperial-stone hover:text-black transition-colors text-xs uppercase tracking-widest">Download .jar</a>
+                </div>
+            </div>
+
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-lg flex flex-col">
+                <div class="content-overlay p-6 flex flex-col h-full border-t-2 border-imperial-stone/30">
+                    <h3 class="font-heading text-xl text-imperial-gold mb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-imperial-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Sodium
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">Критическая оптимизация FPS для комфортной игры.</p>
+                    <a href="downloads/sodium-fabric-0.8.6+mc1.21.11.jar" class="text-center w-full bg-imperial-bg border border-imperial-stone/30 text-white font-bold py-2 hover:bg-imperial-stone hover:text-black transition-colors text-xs uppercase tracking-widest">Download .jar</a>
+                </div>
+            </div>
+
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-lg flex flex-col">
+                <div class="content-overlay p-6 flex flex-col h-full border-t-2 border-imperial-stone/30">
+                    <h3 class="font-heading text-xl text-imperial-gold mb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-imperial-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        Fabric API
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">Базовая библиотека, необходимая для работы абсолютно всех модов.</p>
+                    <a href="downloads/fabric-api-0.141.3+1.21.11.jar" class="text-center w-full bg-imperial-bg border border-imperial-stone/30 text-white font-bold py-2 hover:bg-imperial-stone hover:text-black transition-colors text-xs uppercase tracking-widest">Download .jar</a>
+                </div>
+            </div>
+
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-lg flex flex-col">
+                <div class="content-overlay p-6 flex flex-col h-full border-t-2 border-imperial-stone/30">
+                    <h3 class="font-heading text-xl text-imperial-gold mb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-imperial-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        Armor Statues
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">Тонкая настройка стоек для брони. Инструмент для декораторов.</p>
+                    <a href="downloads/ArmorStatues-v21.11.1-mc1.21.11.Fabric.jar" class="text-center w-full bg-imperial-bg border border-imperial-stone/30 text-white font-bold py-2 hover:bg-imperial-stone hover:text-black transition-colors text-xs uppercase tracking-widest">Download .jar</a>
+                </div>
+            </div>
+
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-lg flex flex-col md:col-span-2 lg:col-span-3">
+                <div class="content-overlay p-6 flex flex-col h-full border-t-2 border-imperial-stone/30">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div class="flex-grow">
+                            <h3 class="font-heading text-xl text-imperial-gold mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-imperial-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                                Ядра систем (Библиотеки)
+                            </h3>
+                            <p class="text-sm text-gray-400">Вспомогательные файлы: <span class="text-gray-200">PuzzlesLib, ForgeConfigAPIPort, Kotlin</span>. Без них основные моды могут работать нестабильно.</p>
+                        </div>
+                        <a href="downloads/Aeterna_Mods_Pack.zip" class="w-full md:w-auto px-8 bg-imperial-bg border border-imperial-stone/30 text-white font-bold py-3 hover:bg-imperial-stone hover:text-black transition-colors text-xs uppercase tracking-widest whitespace-nowrap text-center">Download in ZIP</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 bg-[#212121] border-l-4 border-imperial-red p-8 shadow-2xl relative">
+            <h3 class="font-heading text-2xl text-imperial-gold mb-6 uppercase tracking-widest">Архивные Предписания</h3>
+            <ol class="list-decimal list-inside space-y-4 text-gray-300 font-medium">
+                <li><span class="text-imperial-stone">Установите Fabric через загруженный инсталлер.</span></li>
+                <li><span class="text-imperial-stone">Перенесите все скачанные `.jar` файлы в директорию:</span> <code class="bg-black/50 text-imperial-red px-2 py-1 rounded font-mono text-sm border border-white/10">%appdata%/.minecraft/mods</code></li>
+                <li><span class="text-imperial-stone">В лаунчере выберите и запустите версию:</span> <strong class="text-white">fabric-loader-1.21.1</strong>.</li>
+                <li><span class="text-imperial-stone">При возникновении проблем — обратитесь к Инженерам в канал</span> <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="text-[#5865F2] hover:underline bg-[#5865F2]/10 px-2 py-0.5 rounded">#🎫┃поддержка</a> <span class="text-imperial-stone">в Discord.</span></li>
+            </ol>
+        </div>
+
+    </main>
+</body>
+</html>
