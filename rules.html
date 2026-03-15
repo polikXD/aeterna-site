@@ -2,124 +2,72 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Законы Империи | Аэтерна</title>
+    <title>Законы | Империя Аэтерна</title>
     <link rel="icon" type="image/png" href="AeternaLogo.png">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              imperial: { bg: "#1E1E1E", red: "#C24B40", stone: "#8E939D", gold: "#FFD700" }
-            },
-            fontFamily: {
-              heading: ['"Cinzel"', 'serif'],
-              sans: ['"Inter"', 'sans-serif'],
-            }
-          }
-        }
+        theme: { extend: { colors: { imperial: { bg: "#1E1E1E", red: "#C24B40", stone: "#8E939D", gold: "#FFD700" } }, fontFamily: { heading: ['"Cinzel"', 'serif'], sans: ['"Inter"', 'sans-serif'] } } }
       }
     </script>
     <style>
-        .stone-tablet {
-            background-image: url('RulesTablet.png');
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .stone-tablet:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(194, 75, 64, 0.3);
-        }
-        .content-overlay {
-            background: rgba(15, 15, 15, 0.85);
-            backdrop-filter: blur(2px);
-        }
-        .text-shadow {
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-        }
+        .stone-tablet { background-image: url('RulesTablet.png'); background-size: cover; background-position: center; transition: all 0.3s ease; }
+        .stone-tablet:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(194, 75, 64, 0.4); }
+        .content-overlay { background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(3px); }
     </style>
 </head>
 <body class="bg-imperial-bg text-gray-200 font-sans min-h-screen pt-20">
-
     <header class="fixed top-0 w-full bg-imperial-bg/95 border-b border-imperial-stone/30 z-50">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 font-heading text-xl text-imperial-gold font-bold tracking-widest">
                 <img src="AeternaLogo.png" alt="Logo" class="h-10 w-auto">
                 AETERNA
             </a>
-            <nav class="flex gap-6 text-sm font-semibold tracking-wider">
+            <nav class="flex gap-6 text-sm font-semibold tracking-wider items-center">
                 <a href="index.html" class="hover:text-imperial-red transition-colors">ГЛАВНАЯ</a>
                 <a href="rules.html" class="text-imperial-red">ПРАВИЛА</a>
                 <a href="lore.html" class="hover:text-imperial-red transition-colors">ЛОР</a>
                 <a href="map.html" class="hover:text-imperial-red transition-colors">КАРТА</a>
+                <a href="https://discord.gg/TuBjkfTKqY" target="_blank" class="bg-imperial-gold/10 text-imperial-gold border border-imperial-gold/30 px-3 py-1 rounded hover:bg-imperial-gold hover:text-black transition-all">DISCORD</a>
             </nav>
         </div>
     </header>
 
     <div class="max-w-7xl mx-auto px-4 py-12">
-        <div class="text-center mb-16">
-            <h1 class="font-heading text-4xl md:text-5xl text-imperial-gold mb-4 tracking-tighter drop-shadow-md">
-                ВЕЛИКИЙ СВОД ЗАКОНОВ
-            </h1>
-            <div class="h-1 w-32 bg-imperial-red mx-auto"></div>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8 items-start">
-            
-            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-2xl">
-                <div class="content-overlay p-8 h-full border-t-2 border-imperial-gold/30">
-                    <h2 class="font-heading text-2xl text-imperial-gold mb-6 border-b border-imperial-red/50 pb-4 text-center text-shadow">
-                        ОБЩИЙ РЕГЛАМЕНТ
-                    </h2>
-                    <div class="space-y-4 text-sm leading-relaxed text-shadow">
-                        <p><strong class="text-imperial-red">1.1. Имперская Иерархия:</strong> Сервер является абсолютной монархией. Решения Императора <span class="italic">Polik</span> и Сената (Судья We1k2, Маршал ZVEROBOI, Торговец BiotikKotik, Строитель Arturnotgay) обжалованию не подлежат.</p>
-                        <p><strong class="text-imperial-red">1.2. Политика Приватности:</strong> Запрещена публикация личных данных (доксинг) и распространение личных переписок без согласия сторон.</p>
-                        <p><strong class="text-imperial-red">1.3. Модификации:</strong> Разрешены эстетические моды (шейдеры, Litematica без автобилда). X-Ray, Fly, Killaura — <span class="text-red-500 font-bold">вечный бан по IP.</span></p>
-                        <p><strong class="text-imperial-red">1.4. Чат:</strong> Запрещены спам и токсичность. Аэтерна — место для политики и интриг, а не для бессмысленных оскорблений.</p>
-                    </div>
+        <h1 class="font-heading text-4xl text-imperial-gold text-center mb-16 drop-shadow-md">ВЕЛИКИЙ СВОД ЗАКОНОВ</h1>
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden">
+                <div class="content-overlay p-8 h-full">
+                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2">Общий Регламент</h2>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li><strong class="text-imperial-red">1.1.</strong> Абсолютная монархия. Решения Императора Polik не оспариваются.</li>
+                        <li><strong class="text-imperial-red">1.2.</strong> Доксинг и деанон — вечный бан.</li>
+                        <li><strong class="text-imperial-red">1.3.</strong> Читы запрещены. IP-бан без права выкупа.</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-2xl lg:mt-8">
-                <div class="content-overlay p-8 h-full border-t-2 border-imperial-gold/30">
-                    <h2 class="font-heading text-2xl text-imperial-gold mb-6 border-b border-imperial-red/50 pb-4 text-center text-shadow">
-                        УГОЛОВНЫЙ КОДЕКС
-                    </h2>
-                    <div class="space-y-4 text-sm leading-relaxed text-shadow">
-                        <p><span class="text-imperial-red font-bold">2.1.</span> Кража из сундуков внутри чужих зданий считается преступлением. Кража из Государственной Казны — <span class="italic underline text-imperial-stone">изгнание</span>.</p>
-                        <p><span class="text-imperial-red font-bold">2.2.</span> Любое изменение ландшафта или построек в чужом штате без разрешения — тюрьма. Повреждение акведуков карается каторгой.</p>
-                        <p><span class="text-imperial-red font-bold">2.3.</span> Оскорбление достоинства или нападение на чиновников ведет к заключению в <span class="text-imperial-red">Тюрьму Ledger</span>.</p>
-                        <p><span class="text-imperial-red font-bold">2.4.</span> Строительство в буферных зонах запрещено. Постройки сносятся без компенсации, владелец штрафуется на Ауреусы.</p>
-                    </div>
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden lg:mt-6">
+                <div class="content-overlay p-8 h-full">
+                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2">Уголовный Кодекс</h2>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li><strong class="text-imperial-red">2.1.</strong> Гриферство чужих штатов — тюрьма.</li>
+                        <li><strong class="text-imperial-red">2.2.</strong> Кража из Казны Оссирии — изгнание.</li>
+                        <li><strong class="text-imperial-red">2.3.</strong> Оскорбление Сената — каторга Ledger.</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden shadow-2xl">
-                <div class="content-overlay p-8 h-full border-t-2 border-imperial-gold/30">
-                    <h2 class="font-heading text-2xl text-imperial-gold mb-6 border-b border-imperial-red/50 pb-4 text-center text-shadow">
-                        ЗЕМЛЯ И ВОЙНА
-                    </h2>
-                    <div class="space-y-4 text-sm leading-relaxed text-shadow font-medium">
-                        <ol class="list-decimal list-inside space-y-3">
-                            <li><span class="text-imperial-stone">Регистрация:</span> Каждый игрок подает прошение Судье We1k2.</li>
-                            <li><span class="text-imperial-stone">Налоги:</span> 10% в Казну Оссирии еженедельно. Куратор: BiotikKotik.</li>
-                            <li><span class="text-imperial-stone">Торговля:</span> Разрешена в Восточных Доках. Подпольная торговля — конфискация.</li>
-                            <li><span class="text-imperial-stone">Война:</span> Только по причине (Casus Belli), одобренной Судьей.</li>
-                            <li><span class="text-imperial-stone">Мертвая Рука:</span> Отсутствие 14 дней без предупреждения — национализация земель.</li>
-                        </ol>
-                    </div>
+            <div class="stone-tablet border border-white/10 rounded-sm overflow-hidden">
+                <div class="content-overlay p-8 h-full">
+                    <h2 class="font-heading text-xl text-imperial-gold mb-4 border-b border-imperial-red/50 pb-2">Земельное Право</h2>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li><strong class="text-imperial-red">3.1.</strong> Налог 10% в пользу Казны еженедельно.</li>
+                        <li><strong class="text-imperial-red">3.2.</strong> Торговля только в Восточных Доках.</li>
+                        <li><strong class="text-imperial-red">3.3.</strong> Неактив 14 дней — национализация земель.</li>
+                    </ul>
                 </div>
             </div>
-
-        </div>
-        
-        <div class="mt-16 text-center text-imperial-stone/50 text-xs italic">
-            Печать Канцелярии Оссирии © 2026. Незнание закона не освобождает от каторги.
         </div>
     </div>
-
 </body>
 </html>
