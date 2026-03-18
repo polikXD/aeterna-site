@@ -59,8 +59,14 @@
 
         <section id="apply" class="px-4 py-8">
             <div class="max-w-xl mx-auto bg-[#252525] p-8 border border-imperial-stone/40 rounded-sm shadow-2xl relative">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-imperial-red px-6 py-1 text-xs font-bold uppercase tracking-widest text-white">Канцелярия</div>
-                <h2 class="font-heading text-2xl text-imperial-gold mb-6 text-center border-b border-imperial-stone/30 pb-4">ПРОШЕНИЕ О ГРАЖДАНСТВЕ</h2>
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-imperial-red px-6 py-1 text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
+                    Канцелярия <span class="text-black/50">|</span> Возрастной ценз: [X]+
+                </div>
+                
+                <h2 class="font-heading text-2xl text-imperial-gold mt-2 mb-6 text-center border-b border-imperial-stone/30 pb-4">ПРОШЕНИЕ О ГРАЖДАНСТВЕ</h2>
+                
+                <div id="formError" class="hidden mb-6 bg-red-900/20 border-l-4 border-imperial-red text-red-200 text-xs p-3 font-bold uppercase tracking-wide"></div>
+
                 <form id="applicationForm" class="flex flex-col gap-5">
                     <div>
                         <label class="block text-imperial-stone text-[10px] mb-1 uppercase tracking-widest font-bold">Имя в реестре (Никнейм)</label>
@@ -109,17 +115,38 @@
         }
         function closeModal() { document.getElementById('successModal').classList.add('hidden'); }
 
+        function showError(msg) {
+            const errBox = document.getElementById('formError');
+            errBox.innerText = msg;
+            errBox.classList.remove('hidden');
+        }
+
+        function hideError() {
+            document.getElementById('formError').classList.add('hidden');
+        }
+
         document.getElementById('applicationForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            hideError();
+            
             const btn = document.getElementById('submitBtn');
             const nick = document.getElementById('nickname').value;
             const age = parseInt(document.getElementById('age').value);
             const side = document.getElementById('strongSide').value || "None";
             const webhookUrl = "https://discordapp.com/api/webhooks/1482801738942644316/WNQbUyjsItHz3-84f_6AJJc2Eet6I8LABUMYiArzcYZZR_Id8X0PLWUvaEY6SinIQAi2";
 
-            if (age < 10 || age > 100) { alert("Invalid age data"); return; }
+            // НАСТРОЙКА ВОЗРАСТА: Укажи здесь нужный возраст вместо 16
+            const MIN_AGE = 13; 
+
+            if (age < MIN_AGE || age > 100) { 
+                showError(`Отказ Канцелярии: Минимальный возраст для вступления — ${MIN_AGE} лет.`);
+                return; 
+            }
             const stopWords = ['admin', 'moder', 'админ', 'модер'];
-            if (stopWords.some(word => nick.toLowerCase().includes(word))) { alert("Forbidden nickname."); return; }
+            if (stopWords.some(word => nick.toLowerCase().includes(word))) { 
+                showError("Отказ Канцелярии: Использование запрещенных слов в имени реестра.");
+                return; 
+            }
 
             btn.innerText = 'SYSTEM PROCESSING...';
             btn.disabled = true;
@@ -134,7 +161,7 @@
             try {
                 const response = await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
                 if (response.ok) { document.getElementById('successModal').classList.remove('hidden'); this.reset(); }
-            } catch (err) { alert("System error."); }
+            } catch (err) { showError("Ошибка связи с сервером Канцелярии. Попробуйте позже."); }
             finally { btn.innerText = 'Отправить в Капитолий'; btn.disabled = false; }
         });
     </script>
